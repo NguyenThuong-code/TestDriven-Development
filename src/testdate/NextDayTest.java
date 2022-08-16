@@ -42,25 +42,25 @@ public class NextDayTest {
         int monthTest=12;
         int yearTest=2022;
         String result=NextDayCalculator.getNextDay(dayTest,monthTest,yearTest);
-        assertEquals("1/5/2022",result);
+        assertEquals("1/1/2023",result);
     }
     @Test
-    @DisplayName("case 29/2/2022")
+    @DisplayName("case 28/2/2022")
     void testDay29Month2Year2022(){
-        int dayTest =29;
+        int dayTest =28;
         int monthTest=2;
         int yearTest=2022;
         String result=NextDayCalculator.getNextDay(dayTest,monthTest,yearTest);
         assertEquals("1/3/2022",result);
     }
     @Test
-    @DisplayName("case 28/2/2018")
+    @DisplayName("case 29/2/2018")
     void testDay28Month2Year2018(){
-        int dayTest =28;
+        int dayTest =29;
         int monthTest=2;
-        int yearTest=2018;
+        int yearTest=2020;
         String result=NextDayCalculator.getNextDay(dayTest,monthTest,yearTest);
-        assertEquals("1/3/2018",result);
+        assertEquals("1/3/2020",result);
     }
 
 }
