@@ -8,19 +8,42 @@ public class NextDayCalculator {
     public static String getNextDay(int dayTest, int monthTest, int yearTest) {
         String result;
         int lastOfMonth = getLastOfMonth(monthTest);
+        boolean leapYear = isLeapYear(yearTest);
         if (dayTest == lastOfMonth) {
           result= FIRSTDAYOFMONTH + CONCATENATION + (++monthTest) + CONCATENATION + yearTest;
-        } else {
+        } else if(leapYear==true) {
+result= FIRSTDAYOFMONTH + CONCATENATION +monthTest++ +CONCATENATION+yearTest;
+        }else {
             result = ++dayTest + CONCATENATION + monthTest + CONCATENATION + yearTest;
 
         }
+
         return result;
     }
+
+    private static boolean isLeapYear(int yearTest) {
+        if (yearTest % 4 == 0) {
+            if (yearTest % 100 == 0) {
+                if (yearTest % 400 == 0)
+                    return true;
+
+                else
+                    return false;
+            } else
+                return true;
+        }else
+                return false;
+
+
+        }
 
     private static int getLastOfMonth(int monthTest) {
         int lastOfMonth=0;
         switch (monthTest){
             case 1:
+            case 2:
+                lastOfMonth=28;
+                break;
             case 3:
             case 5:
             case 7:
